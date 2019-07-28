@@ -1,1 +1,14 @@
-
+.list-Item{
+    padding: 0rem 1rem;
+    margin-bottom: 1rem;
+    background-color: black;
+    border: 1px solid white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    p{
+        margin: 0;
+        padding: 1rem;
+        color: white;
+    }
+}

@@ -1,0 +1,41 @@
+ <ion-item color="dark">
+    <ion-label>Rest Duration</ion-label>
+    <ion-datetime display-format="mm:ss" placeholder="Tap here" [(ngModel)]="fullTime"></ion-datetime>
+  </ion-item>
+
+  <p class="centered">Tap circle to start and restart rest timer.</p>
+
+  <round-progress
+    class="mt-2"
+    [current]="percent"
+    [max]="100"
+    [color]="'#F9CC18'"
+    [background]="'#000'"
+    [radius]="radius"
+    [stroke]="16"
+    [semicircle]="false"
+    [rounded]="true"
+    [clockwise]="true"
+    [responsive]="true"
+    [duration]="300"
+    [animation]="'easeInOutQuart'"
+    [animationDelay]="0"
+    (click)="startTimer()"></round-progress>
+
+    <div class="centered">
+      <h2>Total Workout Time</h2>
+      <h3>{{ elapsed.h}}:{{elapsed.m}}:{{elapsed.s}}</h3>
+    </div>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ng-container *ngIf="!timer; else running">
+        <ion-fab-button (click)="startTimer()">
+          <ion-icon name="play"></ion-icon>
+        </ion-fab-button>
+      </ng-container>
+      <ng-template #running>
+          <ion-fab-button (click)="stopTimer()">
+            <ion-icon name="square"></ion-icon>
+          </ion-fab-button>
+      </ng-template>
+    </ion-fab>

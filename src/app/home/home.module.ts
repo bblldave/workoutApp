@@ -7,6 +7,7 @@ import {NgCircleProgressModule} from 'ng-circle-progress';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 import { HomePage } from './home.page';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,10 @@ import { HomePage } from './home.page';
       {
         path: '',
         component: HomePage
+      },
+      {
+        path: 'timer',
+        component: TimerComponent
       }
     ]),
     NgCircleProgressModule.forRoot({
@@ -33,6 +38,8 @@ import { HomePage } from './home.page';
     }),
     RoundProgressModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    TimerComponent]
 })
 export class HomePageModule {}

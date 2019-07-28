@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Insomnia} from '@ionic-native/insomnia/ngx';
-import { Workout } from './workout';
+import { Insomnia } from '@ionic-native/insomnia/ngx';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-timer',
+  templateUrl: './timer.component.html',
+  styleUrls: ['./timer.component.scss'],
 })
-export class HomePage implements OnInit {
-  workouts: Workout[];
+export class TimerComponent implements OnInit {
   percent = 0;
   radius = 100;
   fullTime: any = '00:01:30';
@@ -25,12 +23,7 @@ export class HomePage implements OnInit {
 
   constructor(private insomnia: Insomnia) {}
 
-  ngOnInit() {
-    this.workouts = [{
-      name: 'workout1',
-      duration: '10mins'
-    }, {name: 'workout2', duration: '20mins'}];
-  }
+  ngOnInit() {}
 
   startTimer() {
 
@@ -101,6 +94,5 @@ export class HomePage implements OnInit {
     };
     this.insomnia.allowSleepAgain();
   }
-
 
 }
